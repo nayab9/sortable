@@ -1,3 +1,5 @@
+import json
+
 class IOManager:
     
     def __init__(self, filename):
@@ -20,4 +22,6 @@ class IOManager:
         with open(self.filename, "r") as file:
             self.fileContent = file.read().splitlines()
         
-        
+    def writeFile(self, outData):
+        with open('results.txt', "w") as filePointer:
+            json.dumps(outData, filePointer)
