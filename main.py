@@ -1,5 +1,6 @@
 from util.io import IOManager
 from util.jsonParser import JSONParser
+from brains.modelMaker import ModelMaker
 
 #intialize IO manager with a filename (hardcoded for now)
 #TODO: pass filename as a paramter with a flag
@@ -19,16 +20,19 @@ parsedData1 = JSONParser(fileInput1.fileContent)
 
 #now have a data structure containing all data of products
 
+#Go through each product, and make a dict with key being the MODEL NUMBER!
+modelDict = ModelMaker(parsedData1.parsedData)
 
-#Go through each product, and make a dict with key being the manufacturer
+# now I have a nice hash table of my products (note, this could be huge, putting it on disk in buckets is a ram efficient solution
 
-#go through each listing, send the listing to a parser
+#go through each listing.txt item, send the listing to a parser
 
 #the parser will take the listing, pull its 'title'
-#the title for the list is split into its keywords based on some criter
-#the split words are then compared to the manufacters products 
-#first try to find product name, family, then model
-#if all three match, we are surely confident that this is the correct listing
+#the title for the list is split into its keywords based on some critera
+#the split words are then compared to the MODELSs 
+#first try to find MODEL - if multiple MODELs, match MANUFACTERUR
+#if MODEl matches and is unique, THATSS the one 
+#if multiple model matches, match the manufacter... thats the one
 
 
 
