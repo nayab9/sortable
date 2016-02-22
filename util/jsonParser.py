@@ -15,5 +15,6 @@ class JSONParser:
             self.parsedData.append(json.loads(line))
     
     def printData(self):
-        print "printing the so called parsed data"
-        print self.parsedData
+        #print "printing the so called parsed data"
+        #print self.parsedData
+        blah = ""

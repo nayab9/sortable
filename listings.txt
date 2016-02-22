@@ -27,3 +27,4 @@
 {"title":"Canon PowerShot A495 10.1 MP Digital Camera with 3.3x Optical Zoom and 2.5-Inch LCD (Red)","manufacturer":"Canon Canada","currency":"CAD","price":"150.97"}
 {"title":"Olympus S6100 Battery for SP Series","manufacturer":"Olympus","currency":"CAD","price":"29.99"}
 {"title":"Samsung TL240"}
+{"title":"Nikon s6100","manufacturer":"Nikon","announced-date":"2011-02-08T19:00:00.000-05:01"}

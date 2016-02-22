@@ -14,7 +14,7 @@ class ListingMaker:
         self.resultDict = defaultdict(list)
         self.products = products
         self.createResultsList()
-        
+    
     def createResultsList(self):
         for item in self.listings:
             splitString = item['title'].split()
@@ -27,7 +27,7 @@ class ListingMaker:
                     if len(self.products[word]) == 1:
                         #print "Only one model entry!, match found!"
                         self.resultDict[self.products[word][0]['product_name']].append(item)
-                        print self.resultDict
+                        #print self.resultDict
                     elif len(self.products[word]) > 1:
                         print "More than one model match, manufacter filter required"
                 #else:

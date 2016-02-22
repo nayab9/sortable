@@ -37,7 +37,6 @@ listingList = ListingMaker(parsedData2.parsedData, modelDict.modelDict)
 #if multiple model matches, match the manufacter... thats the one
 
 
-
-
-
 #output file to json at the end
+fileInput1.writeFile(listingList.resultDict)
+#fileInput1.writeFile({'blah':'blah2'})

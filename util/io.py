@@ -20,8 +20,16 @@ class IOManager:
     
     def readFile(self):
         with open(self.filename, "r") as file:
+           # lines = file.readlines()
+          #  for line in lines:
+           #     line = line.lower()
+           #     self.fileContent = self.fileContent + line;
+        #print self.fileContent
+        
             self.fileContent = file.read().splitlines()
+            self.fileContent = [element.lower() for element in self.fileContent]
+            #print self.fileContent
         
     def writeFile(self, outData):
         with open('results.txt', "w") as filePointer:
-            json.dumps(outData, filePointer)
+            json.dump(outData, filePointer)
