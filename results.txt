@@ -1,1 +1,1 @@
-{"nikon-s6100": [{"model": "s6100", "announced-date": "2011-02-08t19:00:00.000-05:01", "product_name": "nikon-s6100", "family": "coolpix", "manufacturer": "canon"}], "samsung_tl240": [{"title": "samsung tl240"}]}
+{"nikon-s6100": [{"announced-date": "2011-02-08t19:00:00.000-05:01", "manufacturer": "canon canada", "title": "nikon s6100"}, {"announced-date": "2011-02-08t19:00:00.000-05:00", "manufacturer": "canon canada", "title": "nikon s6100"}], "samsung_tl240": [{"title": "samsung tl240"}]}

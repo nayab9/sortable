@@ -33,8 +33,8 @@ class ListingMaker:
                         print "More than one model match, manufacter filter required"
                         print self.products[word]
                         for element in self.products[word]:
-                            if item['manufacturer'] == element['manufacturer']:
+                            if item['manufacturer'].find(element['manufacturer']) != -1:
                                 print "manufacter found to match the multiple model entry"
-                                self.resultDict[self.products[word][0]['product_name']].append(element)
+                                self.resultDict[self.products[word][0]['product_name']].append(item)
                 #else:
                     #print "bummer!"
