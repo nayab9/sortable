@@ -32,4 +32,4 @@ class IOManager:
         
     def writeFile(self, outData):
         with open('results.txt', "w") as filePointer:
-            json.dump(outData, filePointer)
+            json.dump(outData, filePointer, indent=2)

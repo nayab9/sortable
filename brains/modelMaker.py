@@ -16,4 +16,4 @@ class ModelMaker:
         for item in self.jsonData:
             #print item['model']
             self.modelDict[item['model']].append(item)
-            #print "printing newly constructed product index: ", self.modelDict
+        print "printing newly constructed product index: ", self.modelDict

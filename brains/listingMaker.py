@@ -27,14 +27,19 @@ class ListingMaker:
                     #print len(self.products[word])
                     if len(self.products[word]) == 1:
                         #print "Only one model entry!, match found!"
-                        self.resultDict[self.products[word][0]['product_name']].append(item)
+                        print item
+                        print self.products[word]
+                        if item['manufacturer'].find(self.products[word][0]['manufacturer']) != -1:
+                            self.resultDict[self.products[word][0]['product_name']].append(item)
+                            #print self.products[word]
                         #print self.resultDict
                     elif len(self.products[word]) > 1:
-                        print "More than one model match, manufacter filter required"
-                        print self.products[word]
+                       # print "More than one model match, manufacter filter required"
+                        #print self.products[word]
                         for element in self.products[word]:
                             if item['manufacturer'].find(element['manufacturer']) != -1:
-                                print "manufacter found to match the multiple model entry"
-                                self.resultDict[self.products[word][0]['product_name']].append(item)
+                               # print "manufacter found to match the multiple model entry"
+                                self.resultDict[element['product_name']].append(item)
+                                #print item
                 #else:
                     #print "bummer!"
