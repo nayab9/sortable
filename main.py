@@ -40,5 +40,5 @@ listingList = ListingMaker(parsedData2.parsedData, modelDict.modelDict)
 #output file to json at the end
 fileInput1.writeFile(listingList.resultDict)
 
-print listingList.resultDict
+#print listingList.resultDict
 #fileInput1.writeFile({'blah':'blah2'})

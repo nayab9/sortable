@@ -11,9 +11,9 @@ class ModelMaker:
     
     #Check for duplicates of model/manufacturer? i.e. if it doesn't exist, add it?
     def createModelDict(self):
-        print "Asking for a dict creation"
+        #print "Asking for a dict creation"
         #self.modelDict = defaultdict(list)
         for item in self.jsonData:
             #print item['model']
             self.modelDict[item['model']].append(item)
-        print "printing newly constructed product index: ", self.modelDict
+        #print "printing newly constructed product index: ", self.modelDict

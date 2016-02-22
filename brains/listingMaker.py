@@ -27,8 +27,8 @@ class ListingMaker:
                     #print len(self.products[word])
                     if len(self.products[word]) == 1:
                         #print "Only one model entry!, match found!"
-                        print item
-                        print self.products[word]
+                        #print item
+                        #print self.products[word]
                         if item['manufacturer'].find(self.products[word][0]['manufacturer']) != -1:
                             self.resultDict[self.products[word][0]['product_name']].append(item)
                             #print self.products[word]
