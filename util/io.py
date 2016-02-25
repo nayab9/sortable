@@ -5,6 +5,8 @@ class IOManager:
     def __init__(self, filename):
         self.filename = filename
         self.fileContent = ""
+        self.outFormatted = {}
+        self.listOutput = []
         self.readFile()
         
     def printFilename(self):
@@ -31,5 +33,10 @@ class IOManager:
             #print self.fileContent
         
     def writeFile(self, outData):
+        # go through the JSON and arrange it differently?
+        for product, listings in outData.items():
+            self.outFormatted['product_name'] = product
+            self.outFormatted['listings'] = listings
+            self.listOutput.append(self.outFormatted)
         with open('results.txt', "w") as filePointer:
-            json.dump(outData, filePointer, indent=2)
+            json.dump(self.listOutput, filePointer, indent=2)

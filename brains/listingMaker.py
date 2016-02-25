@@ -17,8 +17,8 @@ class ListingMaker:
     
     #manufacter check should be a substring check (i.e. Canon vs Canon Canada)
     def createResultsList(self):
-        for item in self.listings:
-            splitString = item['title'].split()
+        for listing in self.listings:
+            splitString = listing['title'].split()
             for word in splitString:
                 if word in self.products:
                     #print "I found a keyword in a listing which matches a model"
@@ -29,17 +29,17 @@ class ListingMaker:
                         #print "Only one model entry!, match found!"
                         #print item
                         #print self.products[word]
-                        if item['manufacturer'].find(self.products[word][0]['manufacturer']) != -1:
-                            self.resultDict[self.products[word][0]['product_name']].append(item)
+                        if listing['manufacturer'].find(self.products[word][0]['manufacturer']) != -1:
+                            self.resultDict[self.products[word][0]['product_name']].append(listing)
                             #print self.products[word]
                         #print self.resultDict
                     elif len(self.products[word]) > 1:
                        # print "More than one model match, manufacter filter required"
                         #print self.products[word]
                         for element in self.products[word]:
-                            if item['manufacturer'].find(element['manufacturer']) != -1:
+                            if listing['manufacturer'].find(element['manufacturer']) != -1:
                                # print "manufacter found to match the multiple model entry"
-                                self.resultDict[element['product_name']].append(item)
+                                self.resultDict[element['product_name']].append(listing)
                                 #print item
                 #else:
                     #print "bummer!"
