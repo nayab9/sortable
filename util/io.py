@@ -43,4 +43,4 @@ class IOManager:
             outFormatted['listings'] = listings
             self.listOutput.append(outFormatted)
         with open('results.txt', "w") as filePointer:
-            json.dump(outData, filePointer, indent=2)
+            json.dump(self.listOutput, filePointer, indent=2)
