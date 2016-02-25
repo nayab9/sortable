@@ -1,12 +1,13 @@
 import json
+from collections import defaultdict
 
 class IOManager:
     
     def __init__(self, filename):
         self.filename = filename
         self.fileContent = ""
-        self.outFormatted = {}
-        self.listOutput = []
+        #self.outFormatted = {}
+        self.listOutput = [] #defaultdict(list)
         self.readFile()
         
     def printFilename(self):
@@ -32,11 +33,14 @@ class IOManager:
             self.fileContent = [element.lower() for element in self.fileContent]
             #print self.fileContent
         
-    def writeFile(self, outData):
+    def writeFileUsingRam(self, outData):
         # go through the JSON and arrange it differently?
+        #print outData
+        
         for product, listings in outData.items():
-            self.outFormatted['product_name'] = product
-            self.outFormatted['listings'] = listings
-            self.listOutput.append(self.outFormatted)
+            outFormatted = {}
+            outFormatted['product_name'] = product
+            outFormatted['listings'] = listings
+            self.listOutput.append(outFormatted)
         with open('results.txt', "w") as filePointer:
-            json.dump(self.listOutput, filePointer, indent=2)
+            json.dump(outData, filePointer, indent=2)

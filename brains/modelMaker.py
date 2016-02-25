@@ -7,10 +7,10 @@ class ModelMaker:
     def __init__(self, jsonData):
         self.jsonData = jsonData
         self.modelDict = defaultdict(list)
-        self.createModelDict()
+        self.createModelDictUsingRam()
     
     #Check for duplicates of model/manufacturer? i.e. if it doesn't exist, add it?
-    def createModelDict(self):
+    def createModelDictUsingRam(self):
         #print "Asking for a dict creation"
         #self.modelDict = defaultdict(list)
         for item in self.jsonData:
