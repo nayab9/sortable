@@ -8,7 +8,7 @@ class IOManager:
         self.fileContent = ""
         #self.outFormatted = {}
         self.listOutput = [] #defaultdict(list)
-        self.readFile()
+        self.readFileIntoRam()
         
     def printFilename(self):
         print self.filename
@@ -21,7 +21,7 @@ class IOManager:
     #This is a ram vs disk space issue
     #for now, assume infinite memory
     
-    def readFile(self):
+    def readFileIntoRam(self):
         with open(self.filename, "r") as file:
            # lines = file.readlines()
           #  for line in lines:
