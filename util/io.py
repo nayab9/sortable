@@ -1,5 +1,8 @@
 import json
+import os
+import shutil
 from collections import defaultdict
+from util.jsonParser import JSONParser
 
 class IOManager:
     
@@ -8,7 +11,7 @@ class IOManager:
         self.fileContent = ""
         #self.outFormatted = {}
         self.listOutput = [] #defaultdict(list)
-        self.readFileIntoRam()
+       # self.readFileIntoRam()
         
     def printFilename(self):
         print self.filename
@@ -16,11 +19,7 @@ class IOManager:
     def printFileContent(self):
         print self.fileContent
         
-    #for now, read the entire file
-    #TODO: line by line into 'bucket' files on disk
-    #This is a ram vs disk space issue
-    #for now, assume infinite memory
-    
+    # Reads entire product file into RAM
     def readFileIntoRam(self):
         with open(self.filename, "r") as file:
            # lines = file.readlines()
@@ -32,11 +31,10 @@ class IOManager:
             self.fileContent = file.read().splitlines()
             self.fileContent = [element.lower() for element in self.fileContent]
             #print self.fileContent
-        
+    
+    # Writes entire content to file
     def writeFileUsingRam(self, outData):
-        # go through the JSON and arrange it differently?
-        #print outData
-        
+
         for product, listings in outData.items():
             outFormatted = {}
             outFormatted['product_name'] = product
@@ -46,6 +44,25 @@ class IOManager:
             json.dump(self.listOutput, filePointer, indent=2)
         
         print "number of items in output file:", len(self.listOutput)
-    #implement a readline version for this.this
-    
-    #implement a write by line version
+
+    # Reads only one product at a time and dumps into bucket on disk
+    def readFileOntoDisk(self, field):
+        lineParser = JSONParser("")
+        dir = "./cache/"
+        if os.path.exists(dir):
+            shutil.rmtree(dir)
+            
+        while os.path.exists(dir): # check if it exists
+            pass
+        
+        os.makedirs(dir)
+            
+        with open(self.filename, "r") as file:
+            for newLine in file:
+                #line = lineParser.parseJSONString(file.readline().lower())
+                line = lineParser.parseJSONString(newLine.lower())
+                temp_dir = dir + line[field] + ".txt"
+
+                with open(temp_dir, "a+") as filePointer:
+                    json.dump(line, filePointer)
+                    filePointer.write(os.linesep)
