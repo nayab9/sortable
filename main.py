@@ -4,7 +4,9 @@ from brains.modelMaker import ModelMaker
 from brains.listingMaker import ListingMaker
 
 #intialize IO manager with a filename (hardcoded for now)
-#TODO: pass filename as a paramter with a flag
+#TODO: pass filenames as a paramter with a flag
+# pass output file as well
+# pass flags for -ram -disk -balanced
 fileInput1 = IOManager("products.txt")
 fileInput1.printFilename()
 #fileInput1.printFileContent()

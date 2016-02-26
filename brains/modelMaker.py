@@ -17,3 +17,5 @@ class ModelMaker:
             #print item['model']
             self.modelDict[item['model']].append(item)
         #print "printing newly constructed product index: ", self.modelDict
+        
+    #implement a disk model version

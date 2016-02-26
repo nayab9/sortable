@@ -25,3 +25,7 @@ class ListingMaker:
                     for element in self.products[word]:
                         if listing['manufacturer'].find(element['manufacturer']) != -1:
                             self.resultDict[element['product_name']].append(listing)
+    
+    # implement a disk heavy solution
+    
+    # implement a load balanced solution

@@ -18,3 +18,5 @@ class JSONParser:
         #print "printing the so called parsed data"
         #print self.parsedData
         blah = ""
+        
+    #implement a line reader

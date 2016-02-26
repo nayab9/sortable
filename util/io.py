@@ -44,3 +44,7 @@ class IOManager:
             self.listOutput.append(outFormatted)
         with open('results.txt', "w") as filePointer:
             json.dump(self.listOutput, filePointer, indent=2)
+    
+    #implement a readline version for this.this
+    
+    #implement a write by line version
